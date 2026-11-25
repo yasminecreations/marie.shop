@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Marie Shop</title>
+
+<link href="https://fonts.googleapis.com/css?family=Playfair Display|Montserrat|Parisienne" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "PlayFair Display";
+    margin: 0px;
+     background-color: rgb(255, 199, 232);
+}
+.products{
+    display: grid;
+    grid-template-columns: repeat( 2 , 1fr);
+    margin-top: 90px;
+    background: rgb(255, 222, 241);
+    padding-left: 5px;
+}
+.product{
+    height: 300px;
+    width: 180px;
+    font-family: "Montserrat";
+    font-weight: 1000;
+    margin-left: 5px; 
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.product img{
+    height: 170px;
+    width: 150px;
+}
+.product button{
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: rgb(255, 199, 232);
+}
+.tag{
+    position: inherit;
+    margin-left: 3px;
+    background: rgb(255, 199, 232);
+    color: black;
+    width: 70px;
+    border-radius: 4px;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.hero{
+    background: url("f7.jpg");
+    background-size:cover ;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%;
+    margin-top: 30px;
+}
+.cl{
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    margin-top: 20px;
+    background: rgb(255, 162, 216);
+    
+}
+
+.clt{
+    animation: scrollUp 6s linear infinite;
+    font-family: "parisienne";
+ display: flex;
+ padding-top: 15px;}
+
+ 
+ 
+
+@keyframes scrollUp{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+.divider{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
+     font-size: 34px;
+     font-family: "parisienne";
+}
+.divider span{
+    padding-left:10px;
+   ;
+}
+.divider::before,
+.divider::after{
+    content: "";
+    flex: 1;
+    border-bottom: 2px dashed black;
+}
+.divider::before{ margin-right: 10px;}
+.divider::after{ margin-left: 10px;}
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:80px;
+    background: url("bck2.jpeg");
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+    z-index:100;
+}
+.navbar a{ 
+    color: antiquewhite;
+}
+.navbar h2{
+    color: antiquewhite;
+    font-family: "parisienne";
+}
+#cart-count{
+    background: red;
+    color: rgb(255, 162, 216);
+    border-radius: 20px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+</style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="indexx.html"><i class="fa-solid fa-house"></i></a>
+        <a href="contact.html"> <i class="fa-solid fa-phone"> </i></a>
+        <h2> Marie Shop </h2>
+        <a href="products.html"> <i class="fa-solid fa-store"></i></a>
+        <a href="cart.html"> <i class="fa-solid fa-bag-shopping"><span id="cart-count">0</span></i></a>
+    </header>
+    <div id="message" style="
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: none;
+    z-index: 999;
+    "> Product added to cart
+    </div>
+    <div class="hero">
+   
+    </div>
+      <div class="cl">
+<h2 class="clt"> New Arrival - New Collection </h2>
+  </div>
+  <span class="divider"> Products </span>
+   <section class="products">
+   <div class="product" > 
+        <span class="tag"> New </span>
+        <img src="erg.jpg" alt="this is a product pic">
+     <h3> Hello Kitty Silver Earings</h3>
+     <h2> Prix : 45dh</h2>
+     <button onclick="addToCart('Hello Kitty Silver Earings',45,'erg.jpg')">
+        Add to Cart
+    </button>
+    </div> 
+ <div class="product">
+     <span class="tag"> New </span>
+     <img src="brclt.jpg" alt="this is a product pic">
+     <h3> Hello Kitty Silver Bracelet</h3>
+     <h2> Prix : 95dh</h2>
+     <button onclick="addToCart('Hello Kitty Plushie',119,'hk1.jpg')">
+        Add to Cart
+    </button>
+  </div>
+  <div class="product"> 
+      <span class="tag"> New </span>
+      <img src="hk1.jpg" alt="this is a product pic">
+     <h3> Hello Kitty Plushie</h3>
+     <h2> Prix : 119dh</h2>
+     <button onclick="addToCart('Hello Kitty Plushie',119,'hk1.jpg')">
+        Add to Cart
+    </button>
+ </div>
+ <div class="product"> 
+    <span class="tag"> New </span>
+    <img src="kc.jpg" alt="this is a product pic">
+     <h3> Full Hello Kitty Charm KeyChain </h3>
+     <h2> Prix : 49dh</h2>
+     <button onclick="addToCart('Full Hello Kitty Charm KeyChain',49,'kc.jpg')">
+        Add to Cart
+    </button>
+  </div>
+  <div class="product"> 
+    <span class="tag"> New </span>
+     <img src="kc2.jpg" alt="this is a product pic">
+     <h3> Full Hello Kitty Charm KeyChain </h3>
+     <h2> Prix : 49dh</h2>
+     <button onclick="addToCart('Full Hello Kitty Charm KeyChain',49,'kc2.jpg')">
+        Add to Cart
+    </button>
+  </div>
+  <div class="product"> 
+    <span class="tag"> New </span>
+    <img src="kc31.jpg" alt="this is a product pic">
+    <h3> Hello Kitty Charm Keychains </h3>
+    <h2> Prix : 39dh </h2>
+    <button onclick="addToCart('Hello Kitty Charm Keychains',39,'kc31.jpg')">
+        Add to Cart
+    </button></div>
+    <div class="product"> 
+        <span class="tag"> New </span>
+        <img src="kck.jpg" alt="this is a product pic">
+        <h3> Hello Kitty Silver Charm Keychains </h3>
+        <h2> Prix : 47dh </h2>
+        <button onclick="addToCart('Hello Kitty Silver Charm Keychains',47,'kck.jpg')">
+            Add to Cart
+        </button></div>
+ <div class="product"> 
+            <span class="tag"> New </span>
+            <img src="mrr1.jpg" alt="this is a product pic">
+            <h3> Hello Kitty Mirror </h3>
+            <h2> Prix : 69dh </h2>
+            <button onclick="addToCart('Hello Kitty Mirror',69,'mrr1.jpg')">
+                Add to Cart
+            </button></div>
+ <div class="product"> 
+            <span class="tag"> New </span>
+            <img src="nck1.jpg" alt="this is a product pic">
+            <h3> Hello Kitty Silver Necklace </h3>
+            <h2> Prix : 79dh </h2>
+            <button onclick="addToCart(' Hello Kitty Silver Necklace ',79,'nkc1.jpg')">
+                    Add to Cart
+                </button></div>
+<div class="product"> 
+           <span class="tag"> New </span>
+            <img src="pc2.jpg" alt="this is a product pic">
+            <h3> Hello Kitty Makeup Bag </h3>
+            <h2> Prix : 49dh </h2>
+            <button onclick="addToCart(' Hello Kitty Makeup Bag ',49,'pc2.jpg')">
+                            Add to Cart
+                        </button></div>
+ <div class="product"> 
+<span class="tag"> New </span>
+<img src="ppc2.jpg" alt="this is a product pic">
+<h3> Hello Kitty Pink Makeup Bag </h3>
+<h2> Prix : 55dh </h2>
+<button onclick="addToCart(' Hello Kitty Pink Makeup Bag ',55,'ppc2.jpg')">
+     Add to Cart
+</button></div>
+<div class="product"> 
+    <span class="tag"> New </span>
+    <img src="blsh.jpg" alt="this is a product pic">
+    <h3> Four Shades Blush Palette </h3>
+    <h2> Prix : 55dh </h2>
+    <button onclick="addToCart('Four Shades Blush Palette ',55,'blsh.jpg')">
+         Add to Cart
+    </button></div>
+
+    <div class="product"> 
+        <span class="tag"> New </span>
+        <img src="blsh.jpg" alt="this is a product pic">
+        <h3> Four Shades Blush Palette </h3>
+        <h2> Prix : 55dh </h2>
+        <button onclick="addToCart('Four Shades Blush Palette ',55,'blsh.jpg')">
+             Add to Cart
+        </button></div>
+        <div class="product"> 
+            <span class="tag"> New </span>
+            <img onclick="showPopUp" src="lpg.jpg" alt="this is a product pic">
+            <h3> Cappuvini Smooth Moisturizing Lip Gloss </h3>
+            <h2> Prix : 35dh </h2>
+            <button onclick="addToCart('Cappuvini Smooth Moisturizing Lip Gloss ',35,'lpg.jpg')">
+                 Add to Cart
+            </button></div>
+            <div class="product"> 
+                <span class="tag"> New </span>
+                <img src="lpst.jpg" alt="this is a product pic">
+                <h3> Collage Art Solid Lip Gloss Box 3pcs </h3>
+                <h2> Prix : 70dh </h2>
+                <button onclick="addToCart('Collage Art Solid Lip Gloss Box 3pcs ',70,'lpst.jpg')">
+                     Add to Cart
+                </button></div>
+</section>
+<div class="PopUp"> 
+    <img src="ppc2" alt="">
+    <span> <i data-lucide="cross"> </i> </span>
+</div>
+<script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    function updateCartCount(){
+        document.getElementById("cart-count").innerText = cart.length;
+    }
+    
+    function showMessage(text){
+        const msg = document.getElementById("message");
+        msg.innerText = text;
+        msg.style.display = "block";
+           setTimeout(()=>{
+          msg.style.display = "none";
+         },2000);
+    }
+      function addToCart(name, price, image){
+          const existing = cart.find(item => item.name === name);
+      
+    
+        if(existing){
+            existing.quantity += 1;
+        } else {
+            cart.push({name, price, image, quantity:1});
+        }
+    
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+        showMessage("Product added to cart!");
+    }
+    
+    updateCartCount();
+    </script>
+    <script>
+      function showPopUp(PopUp){
+        const PopUp = document.getElementById("PopUp");}
+
+     </script>
+    
+    
+        
+    </body>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Marie Shop</title>
+
+<link href="https://fonts.googleapis.com/css?family=Playfair Display|Montserrat|Parisienne" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  crossorigin="anonymous"
+/> 
+<link rel="stylesheet" href="http://www.w3.org/2000/svg">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+     
+    background-color: #fdf9f4;
+       
+}
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:80px;
+    background:#000000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+    z-index:100;
+}
+
+.button{
+    border-radius: 20px;
+    color: #fdf9f4;
+}
+
+.navbar nav{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.navbar nav a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    position:relative;
+}
+
+
+#cart-count{
+    position:absolute;
+    width: 10px;
+    background:rgb(255, 255, 255);
+    color:rgb(255, 0, 0);
+    font-size:15px;
+    border-radius:50%;
+    
+}
+.cart { 
+    background-color: cornsilk;
+    gap: 30px;
+
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    
+ }
+ .hero{
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    background: url("f7.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.herocontent{ 
+    color: rgb(255, 162, 216);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "parisienne";
+    
+}
+
+.hero h2{ 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: lighter;
+}
+.cart h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: lighter;
+    padding-left: 13vmin;
+
+}
+.checkout{ border-radius: 15px;
+padding-left: 10px;
+width: 60%;
+margin-left: 50px;
+height: 35px;
+background-color:rgb(0, 0, 0) ;
+color: rgba(252, 225, 77, 0.712);
+margin-top: 10px;
+}
+.container{
+    background: #d4af7f;
+}
+.orderForm{
+    gap: 30px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+.title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+body{
+        margin: 0px;
+    }
+  #nav{
+      background-color: #fdf1f2;
+      margin: 0px;
+      width:100%;
+  }
+  #nav h3{
+     font-family: "parisienne";
+     color: #e79396;
+     font-size: 20px;
+     font-style: italic;
+     font-weight: 450;
+     margin-left: 85px;
+     padding-top: 10px;
+  }
+  #navbar{
+    background-color: #fdf1f2;
+  
+  }
+  .navbar-nav a{
+      color: #2d2d2d;
+      font-family: "parisienne";
+  }
+  .navbar-toggler-icon{
+      color: #2d2d2d;
+     
+}
+.search-container{
+    position: relative;
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+.search-box{
+    position: absolute;
+    top: 35px;
+    right: 0;
+    display: none;
+    background: white;
+    padding: 5px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 999;
+}
+
+.search-box input{
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.navbar-toggler{
+     margin: 0px;
+     padding: 0px;
+     
+}  
+svg{
+    stroke-width: 1.2;
+    width: 20px;
+}
+.swiper-pagination-bullet{
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+background: #ffffff80;
+margin: 0 6px !important;
+transition: all 0.4s ease;
+}
+.swiper-pagination-bullet-active{
+    height: 6px;
+    background: antiquewhite;
+}
+.swiper-slide {
+    height: 500px;
+    align-items: cover;
+    position: cover;
+    overflow: hidden;
+    object-fit:cover;
+   
+}
+.hero-img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    animation: zoomOut 5s linear;
+}
+
+@keyframes zoomOut{
+  0%{
+    transform: scale(1.15);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+.products{
+    
+    margin-top: 5px;
+    overflow-y:auto;
+    scroll-snap-type:y mandatory;
+    display: flex;
+    background: #fdf1f2;
+    gap: 10px;
+    
+}
+.product{
+    height: 300px;
+    width: 180px;
+    font-family: "Montserrat";
+    font-weight: 1000;
+    margin-left: 5px; 
+    border-radius: 10px;
+    margin-top: 10px;
+    position: relative;
+}
+.product img{
+    height: 170px;
+    width: 150px;
+  
+    
+}
+
+
+.hero-text{
+    color: white;
+  
+   position: absolute;
+   top: 40%;
+   left: 50%;
+   transform: translate(-50%, -30%);
+   opacity: 0;
+   transform: all 1.5s ease;
+   font-size: 20px;
+   font-family: "Montserrat";
+}
+.swiper-slide-active .hero-text{
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: 1.5s ease-in;
+}
+.bttn{
+color: black;
+background-color: white ;
+width: 180px;
+height: 50px;
+font-weight: bold;}
+.ttl{
+  padding-top: 20px;
+  padding-left: 20px;
+  font-family: "Montserrat";
+  font-size: 25px;
+}
+.ttl2{
+    padding-left: 15px;
+    font-family: "Monserrat";
+    font-size: 40px;
+}
+
+#cart-count{
+    background: red;
+    color: rgb(255, 162, 216);
+    border-radius: 20px;
+    padding-right: 2px;
+    padding-left: 2px;
+}
+.products h3{
+    font-size: 20px;
+}
+.products h2{
+    font-size: 15px;
+}
+.btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: pink;
+  color: white;
+  width: 40px;  
+  height: 40px;  
+  border-radius: 50%;
+  padding: 5px;
+}
+.bn{
+    color: transparent;
+    border: transparent;
+    outline: transparent;
+}
+.swiper-button-next{
+    color: #fdf1f2;
+}
+.swiper-button-prev{
+    color: #fdf1f2;
+}
+.m{
+    height: 575px;
+    width: 100%;
+    
+    object-fit: cover;
+}
+.m1{
+    font-family: "Montserrat";
+    font-size: 30px;
+    left: 10%;
+    position: absolute;
+    margin-bottom: 100px ;
+    z-index: 2;
+    bottom: 20%;
+    color: white;
+    font-weight: bold;
+    
+    
+}
+.m1 :hover{
+    text-decoration: underline;
+}
+.bttnn{
+    font-family: "Montserrat";
+    font-size: 20px;
+    left: 10%;
+    position: absolute;
+    margin-bottom: 100px ;
+    z-index: 2;
+    bottom: 9%;
+    color: rgb(0, 0, 0);
+    color: black;
+background-color: white ;
+width: 180px;
+height: 50px;
+font-weight: bold;
+}
+.tt{
+    padding-left: 15px;
+    font-family: "Monserrat";
+    font-size: 30px;
+    
+}
+.joinourcommunity{
+    position: relative;
+    height: 500px;
+    width: 100%;
+}
+.joinourcommunity img{
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+    
+}
+.joinourcommunity h3{
+position: absolute;
+z-index: 2;
+top: 50%;
+left: 5%;
+color: white;
+font-family: "Montserrat";
+font-size: 25px;
+}
+.joinourcommunity button{
+    top: 70%;
+    color: black;
+background-color: white ;
+font-family: "Montserrat";
+height: 50px;
+width: 250px;
+font-weight: bold;
+position: absolute;
+z-index: 2;
+left: 10%;
+margin-top: 10px;
+}
+
+.remove{
+    color: #d4af7f;
+    margin-left: 50px;
+    background: #fdf9f4;
+    width: 70px;
+    border-radius: 10px;
+    height: 30px;
+    margin-top: 7px;
+}
+.pj{
+    font-family: "Montserrat";
+    margin-left: 10px;
+}
+.divv{
+    border-radius: 10px;
+    background-color: cornsilk;
+    width: 190px;
+    display: grid;
+    
+
+}
+.cart-items{
+    background: #d4af7f;
+    grid-template-columns: repeat( 2 , 1fr);
+    display: grid;
+}
+@media (min-width:768px){
+     .products{
+         grid-template-columns: repeat( 4,1fr)
+}}
+   .nav2{ gap: 40px;}
+</style>
+</head>
+<body>
+ 
+    <div id="message" style="
+position: fixed;
+top: 80px;
+right: 20px;
+background: #ff0000;
+color: white;
+padding: 10px 20px;
+border-radius: 8px;
+display: none;
+z-index: 999;
+"> your cart is empty!
+</div>
+
+
+
+<nav class="navbar navbar-expand-lg " id="nav">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" >
+            <a  style=" color: #2d2d2d;  "> <i data-lucide="menu"></i></a>
+       
+    </button>
+      <h3> Marie Shop </h3>
+      <div class="search-container">
+
+        <span style="color:#2d2d2d; cursor:pointer;" onclick="toggleSearch()">
+        <i data-lucide="search"></i>
+        </span>
+        
+        <div class="search-box" id="searchBox">
+        <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchItems()">
+        </div>
+        
+        </div>
+        
+              
+     <a href="cart.html"  style=" color: #2d2d2d;  "> <i data-lucide="handbag"></i><span id="cart-count">0</span></a>
+     
+    <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" id="Home" style="color: #e79396; text-decoration: #e79396 underline;" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" id="jewelery" href="jewelery.html">jewelery</a></li>
+            <li class="nav-item"><a class="nav-link" id="KeyChains" href="keychains.html">KeyChains</a></li>
+            <li class="nav-item"><a class="nav-link" id="hellokitty" href="hellokitty.html">Hello Kitty</a></li>
+            <li class="nav-item"><a class="nav-link" id="cosmetics" href="cosmetics.html">cosmetics</a></li>
+            <li class="nav-item"><a class="nav-link" id="Clothes" href="clothes.html">Clothes</a></li>
+            <li class="nav-item"><a class="nav-link" id="bodycare" href="jewelery.html">Body Care</a></li>
+       </ul>
+    </div>
+</nav>
+
+
+<div class="swiper hero-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img class="hero-img" src="n.jpeg" alt="" style="width: 100%; height: 500px;">
+             <div class="hero-text">
+               <h1> Make Every Gift A FairyTale </h1>
+              
+             </div>
+         </div>
+              <div class="swiper-slide">
+             <img  class="hero-img" src="f.jpeg" alt="this is a hero pic"  style="width: 100%; height: 500px;">
+              <div class="hero-text">  
+             <h1> New Arrival - New Collection </h1>
+              </div>
+              </div>
+              <div class="swiper-slide">
+                <img  class="hero-img" src="i (1).jpeg" alt="this is a hero pic"  style="width: 100%; height: 500px;">
+                 <div class="hero-text">  
+                <h1>Discover what's new </h1>
+                 <a href="prdct.html"><button class="bttn"> Shop Now</button></a>
+                 </div>
+                 </div>
+              </div> 
+   
+ <div class="cart">
+<h2>Your Cart</h2>
+
+<div id="cart-items"></div>
+
+ <h3 id="total"></h3>
+  <form class="orderForm" id="orderForm" onsubmit="placeOrder(event)">
+    <h3 class="title"> Additional info </h3>
+ <input type="text" id="fullName" placeholder="Full Name" required><br><br>
+ <input type="text" id="adress" placeholder="Adress" required><br><br>
+ <input type="tel" placeholder="phone number" required><br><br>
+
+
+
+
+  </form>
+  <button type="button" class="checkout"  onclick="sendToWhatsApp()">Order Via WhatsApp</button>
+</div>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let container = document.getElementById("cart-items");
+let remove = removeItem; 
+let total = 0;
+ function showMessage(text){
+    const msg = document.getElementById("message");
+    msg.innerText = text;
+    msg.style.display = "block";
+       setTimeout(()=>{
+      msg.style.display = "none";
+     },2000);
+}
+function displayCart(){
+    container.innerHTML="";
+    total=0;
+
+    cart.forEach((item,index)=>{
+        total += item.price * item.quantity;
+
+        container.innerHTML += `
+<div class="divv">
+    <img src="${item.image}" width="80">
+    <p class="pj">${item.name}</p>
+    <p class="pk">${item.price} MAD</p>
+    <p class="pl">Quantity: ${item.quantity}</p>
+    <button class="remove" onclick="removeItem(${index})">Remove</button>
+    <hr>
+</div>
+`;
+        
+    });
+
+    document.getElementById("total").innerText="Total: "+total+" MAD";
+}
+
+function removeItem(index){
+    cart.splice(index,1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+}
+cart.forEach((item, index)=>{
+    cart.innerHTML = `
+    <span>${item.name}</span> 
+    <span>${item.price}</span> 
+    <button id="remove-btn" onclick="removeItem(${index})"> remove </button>`; 
+         
+}    )
+
+function sendToWhatsApp(){
+
+if(cart.length === 0){
+    showMessage("your cart is empty!");
+    return;
+}
+
+let fullName = document.getElementById("fullName").value;
+let adress = document.getElementById("adress").value;
+
+if(fullName === "" || adress === ""){
+    showMessage("PLEASE FILL ALL FIELDS!");
+    return;
+}
+
+let message = "Salam, bghit ndwez commande:%0A%0A";
+
+cart.forEach(item=>{
+    message += `• ${item.name} x${item.quantity} - ${item.price * item.quantity} MAD%0A`;
+});
+
+message += `%0ATotal: ${total} MAD%0A`;
+message += `%0A•Full Name: ${fullName}%0A`;
+message += `%0A•Adress: ${adress}%0A`;
+
+let whatsappURL = `https://wa.me/212780746693?text=${message}`;
+
+window.open(whatsappURL, "_blank");
+}
+
+displayCart();
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script> lucide.createIcons(); </script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new
+  Swiper(".hero-slider" , {
+    
+    loop:true,
+
+    autoplay: {
+       delay:5000,
+       disableOnInteraction:false
+    },
+    pagination:{
+       el:".swiper-pagination",
+       clickable:true
+    }
+    
+} );
+</script>
+<script>
+    const swiper1 = new
+    Swiper(".collection-slider" , {
+      
+      loop:true,
+  
+      autoplay: {
+         delay:5000,
+         disableOnInteraction:false
+      },
+      navigation:{
+         
+         nextEl:".swiper-button-next",
+         prevEl:".swiper-button-prev",
+         clickable:true
+      }
+      
+  } );
+  </script>
+<script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    function updateCartCount(){
+        document.getElementById("cart-count").innerText = cart.length;
+    }
+    
+    function showMessage(text){
+        const msg = document.getElementById("message");
+        msg.innerText = text;
+        msg.style.display = "block";
+           setTimeout(()=>{
+          msg.style.display = "none";
+         },2000);
+    }
+      function addToCart(name, price, image){
+          const existing = cart.find(item => item.name === name);
+      
+    
+        if(existing){
+            existing.quantity += 1;
+        } else {
+            cart.push({name, price, image, quantity:1});
+        }
+    
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+        showMessage("Product added to cart!");
+    }
+    
+    updateCartCount();
+    </script>
+    <script>
+function toggleSearch(){
+    const box = document.getElementById("searchBox");
+
+    if(box.style.display === "none" || box.style.display === ""){
+        box.style.display = "block";
+    }else{
+        box.style.display = "none";
+    }
+}
+
+function searchItems(){
+
+let input = document.getElementById("searchInput").value.toLowerCase();
+let items = document.querySelectorAll(".product");
+
+items.forEach(function(item){
+
+let text = item.textContent.toLowerCase();
+
+if(text.includes(input)){
+    item.style.display = "block";
+}else{
+    item.style.display = "none";
+}
+
+});
+
+}
+</script>
+</body>
+</html>
